@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$.getJSON('test\\test.json', function(data) {         
+	$.getJSON('test.json', function(data) {         
 		console.log(data+"please no");
 	});
   $(".needpad").css("opacity", "0");
