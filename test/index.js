@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.getJSON('test.json', function(data) {         
 		for(var i = 0; i < data.length; i++){
-			console.log(data[String(i)]);
+			console.log(data[String(i+1)]);
 		}
 	});
   $(".needpad").css("opacity", "0");
