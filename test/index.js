@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	$.getJSON('test.json', function(data) {         
-		console.log(JSON.stringify(data));
+		for(var i = 0; i < data.length; i++){
+			console.log(data[String(i)]);
+		}
 	});
   $(".needpad").css("opacity", "0");
   $("#maincontent").hide().show('slow', function() {
