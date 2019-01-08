@@ -9,53 +9,28 @@ var skeleton = `
 	</div>
 </div>
 `;
-function roundTo(num) {
-	return((Math.round(num*100)));
-}
+var newStr;
 
-function iterHide(time, end) {
-	$(("#newsEnt"+ip2.toString())+" div").fadeTo(roundTo((time/2)/entryNum), 0.0, function(){
-		$("#newsEnt"+ip2.toString()).hide(roundTo((time/2)/entryNum), function() {
-			ip2 += -1;
-			if(ip2 >= 0){
-				iterHide();
-			}
-			else {
-				end();
-			}
-		});
-	});
-}
 
-function iterShow(time, end) {
-	$(("#newsEnt"+ip2.toString())+" div").fadeTo(roundTo((time/2)/entryNum), 1.0, function(){
-		$("#newsEnt"+ip2.toString()).hide(roundTo((time/2)/entryNum), function() {
-			ip2 += 1;
-			if(ip2 <=entryNum){
-				iterHide();
-			}
-			else {
-				end();
-			}
-		});
-	});
-}
 
 
 $(document).ready(function() {
-  $(".needpad").css("opacity", "0");
-  $(".textin").css("opacity", "0");
-  $("#maincontent").hide().show('slow', function() {
+	console.log("runred");
+  	$(".needpad").css("opacity", "0");
+  	$(".textin").css("opacity", "0");
+  	$("#maincontent").hide().show('slow', function() {
   	$(".needpad").fadeTo("slow", 1.0);
-  });
+ 	});
 	$.getJSON('entries.json', function(data) {
+		console.log("run")
 		for(var i in data) {
-			let newStr = skeleton;
+			newStr = skeleton;
 			newStr = newStr.replace("PLCHOLDTITLE", (data[i]["title"]));
 			newStr = newStr.replace("PLCHOLDBODY", (data[i]["body"]));
 			newStr = newStr.replace("PLCHOLDID", ("newsEnt"+entryNum.toString()));
 			entryNum += 1;
 			$("#allcontain").append(newStr);
+			console.log(newStr);
 		}
 	});
 
