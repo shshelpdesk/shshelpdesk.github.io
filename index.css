@@ -43,6 +43,7 @@ body {
 .textin {
   padding-left: 10%;
   opacity: 0;
+  width: 90vw;
 }
 
 #allcontain {
