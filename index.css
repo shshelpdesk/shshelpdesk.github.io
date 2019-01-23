@@ -21,17 +21,21 @@ body {
   background-color: #071900;
   color: #ffffdd;
   display: none;
+  float: right;
 }
 
 .needpad {
-  padding-left: 10%;
+  padding-left: 5%;
   opacity: 0;
+  width: 95%
 }
 
 #divider-c {
   margin-left: -100%;
+  margin-right: -100%;
   border-color: #dfdfdf;
   padding-left: none;
+  margin-top: 60px;
 }
 
 .entryP {
@@ -48,4 +52,12 @@ body {
 
 #allcontain {
   display: none;
+}
+
+#mainpicture {
+  float:left;
+}
+
+#actualtext {
+  margin-left: 200px;
 }
